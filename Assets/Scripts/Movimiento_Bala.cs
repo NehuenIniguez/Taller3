@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Movimiento_Bala : MonoBehaviour
 {
-    public float velocidad;
+   
+    [SerializeField] private float daño;
+    [SerializeField] private float tiempoVida;
+
     void Start()
     {
-        
+        Destroy(gameObject,tiempoVida);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("Enemigo"))
+        {
+            collision.GetComponent<Enemigo>().Tomardaño(daño);
+            Destroy(gameObject);
+        }
     }
 }
