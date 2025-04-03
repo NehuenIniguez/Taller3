@@ -5,17 +5,30 @@ using UnityEngine;
 public class ControlPlataforma : MonoBehaviour
 {
     private PlatformEffector2D pE2D;
+    private bool puedePasar = false;
     void Start()
     {
         pE2D = GetComponent<PlatformEffector2D>();
     }
 
-    // Update is called once per frame
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Personaje"))
+        {
+            puedePasar = true;
+        }
+    }
     void Update()
     {
-        if (Input.GetKeyDown("down") && Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKey("down") && Input.GetKeyDown(KeyCode.X) && puedePasar )
         {
             pE2D.rotationalOffset = 180f;
+            puedePasar = false;
         }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        pE2D.rotationalOffset = 0;
+        puedePasar = true;
     }
 }

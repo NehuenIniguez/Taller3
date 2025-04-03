@@ -41,16 +41,19 @@ public class Movimiento_Pj : MonoBehaviour
     {
         Girar();
     }
+    
+    if (Input.GetKeyDown("down") && !agacharse)
+    {
+        Agacharse();
+        salto = false;
+    }
 
-    if (Input.GetKeyDown(KeyCode.X) && !salto)
+    if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse)
     {
         salto = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
-    if (Input.GetKeyDown("down") && !agacharse)
-    {
-        Agacharse();
-    }
+    
     if (Input.GetKeyUp("down") && agacharse)
     {
         Pararse();
