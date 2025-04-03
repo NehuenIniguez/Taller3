@@ -7,11 +7,12 @@ TagManager:
   - Enemigo
   - Suelo
   - Agua
+  - Personaje
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Piso
   - Water
   - UI
   - personaje

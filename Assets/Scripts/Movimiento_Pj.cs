@@ -17,6 +17,10 @@ public class Movimiento_Pj : MonoBehaviour
     private Vector2 tamañoOriginal;
     private Vector2 offsetOriginal;
     private bool agacharse = false;
+
+    [Header ("Detectar suelo para pasar de largo")]
+    [SerializeField] private LayerMask suelo;
+
     
     void Start()
     {
@@ -24,34 +28,34 @@ public class Movimiento_Pj : MonoBehaviour
         tamañoOriginal = cajaColision.size;
         offsetOriginal = cajaColision.offset;
     }
-    void Update()
-    {
-        float movimiento = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        //transform.Translate(movimiento, 0, 0);
-        if (!agacharse )
-        {
-            rb.velocity = new Vector2(movimiento * speed, rb.velocity.y);
-            Pararse();
-        }
-        if ((movimiento > 0 && !miraDerecha) || (movimiento < 0 && miraDerecha))
-        {
-            Girar();
-        }
+   void Update()
+{
+    float movimiento = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.X) && !salto)
-        {
-            salto = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        if (Input.GetKeyDown("down") && !agacharse)
-        {
-            Agacharse();
-        }
-        if (Input.GetKeyUp("down") && agacharse)
-        {
-            Pararse();
-        }
+    if (!agacharse)
+    {
+        rb.velocity = new Vector2(movimiento * speed, rb.velocity.y);
+        Pararse();
     }
+    if ((movimiento > 0 && !miraDerecha) || (movimiento < 0 && miraDerecha))
+    {
+        Girar();
+    }
+
+    if (Input.GetKeyDown(KeyCode.X) && !salto)
+    {
+        salto = true;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+    if (Input.GetKeyDown("down") && !agacharse)
+    {
+        Agacharse();
+    }
+    if (Input.GetKeyUp("down") && agacharse)
+    {
+        Pararse();
+    }
+}
     private void Girar()
     {
         miraDerecha = !miraDerecha;
@@ -76,4 +80,6 @@ public class Movimiento_Pj : MonoBehaviour
         cajaColision.size = tamañoOriginal;
         cajaColision.offset = offsetOriginal;
     }
+    
+    
 }
