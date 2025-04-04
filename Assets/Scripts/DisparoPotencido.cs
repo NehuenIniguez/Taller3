@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisparoJugador : MonoBehaviour
+public class DisparoPotencido : MonoBehaviour
 {
     [SerializeField] private Transform ControladorDisparo;
     [SerializeField] private GameObject Bala;
@@ -27,7 +27,7 @@ public class DisparoJugador : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKeyDown(KeyCode.Z) )
+        if (Input.GetKey(KeyCode.Z) )
         {
            Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
 

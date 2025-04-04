@@ -33,16 +33,7 @@ public class DisparoEnemigo : MonoBehaviour
             CancelInvoke(nameof(Disparo));
         }
     }
-   // void Update()
-   // {
-   //     Vector2 direccion = (jugador.transform.position - transform.position).normalized;
-   //     if (Time.time > tiempoUltimoDisparo + tiempoEntreDisparos)
-   //     {
-   //         Disparo(direccion);
-   //         tiempoUltimoDisparo = Time.time;
-   //     }
-   // }
-
+   
     public void Disparo()
     {
         if (jugador == null) return;
