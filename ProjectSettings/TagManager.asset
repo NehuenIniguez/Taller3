@@ -8,6 +8,9 @@ TagManager:
   - Suelo
   - Agua
   - Personaje
+  - PoweUp1
+  - PowerUp1
+  - PowerUp2
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,27 @@ public class DisparoPotencido : MonoBehaviour
     [SerializeField] private Transform ControladorDisparo;
     [SerializeField] private GameObject Bala;
     [SerializeField] private float velocidadBala;
+    [SerializeField] private float couldown;
+    private float lastShot = 0f;
 
     private Vector2 ultimaDireccion = Vector2.right;
+    void Start()
+    {
+        GetComponent<DisparoPotencido>().enabled = false;
+    }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUp1"))
+        {
+            GetComponent<DisparoPotencido>().enabled = true;
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("PowerUp2"))
+        {
+            GetComponent<DisparoPotencido>().enabled = false;
+        }
+    }
     void Update()
     {
         Vector2 direccion = Vector2.zero;
@@ -27,10 +45,10 @@ public class DisparoPotencido : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKey(KeyCode.Z) )
+        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown)
         {
-           Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
-
+            Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
+            lastShot = Time.time;
         }
     }
 

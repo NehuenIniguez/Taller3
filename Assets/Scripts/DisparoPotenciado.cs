@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisparoJugador : MonoBehaviour
+public class DisparoPotenciado : MonoBehaviour
 {
     [SerializeField] private Transform ControladorDisparo;
     [SerializeField] private GameObject Bala;
     [SerializeField] private float velocidadBala;
+    [SerializeField] private float couldown;
+    private float lastShot = 0f;
+
 
     private Vector2 ultimaDireccion = Vector2.right;
-
     void Start()
     {
-        GetComponent<DisparoPotencido>().enabled = true;
+        GetComponent<DisparoPotenciado>().enabled = false;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PowerUp1") || other.CompareTag("PowerUp2"))
+        if (other.CompareTag("PowerUp2"))
         {
-           GetComponent<DisparoJugador>().enabled = false;
+            GetComponent<DisparoPotenciado>().enabled = true;
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("PowerUp1"))
+        {
+            GetComponent<DisparoPotenciado>().enabled = false;
         }
     }
     void Update()
@@ -39,21 +46,32 @@ public class DisparoJugador : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKeyDown(KeyCode.Z) )
+        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown)
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
-
+            lastShot = Time.time;
         }
     }
 
     private void Disparar(Vector2 direccion)
     {
-        GameObject bala = Instantiate(Bala, ControladorDisparo.position, Quaternion.identity);
-        Rigidbody2D rb = bala.GetComponent<Rigidbody2D>();
-
-        if (rb != null)
+        // Dirección normalizada (ej: Vector2.right o Vector2.left según dónde mire el pj)
+        Vector2[] direcciones = new Vector2[]
         {
-            rb.velocity = direccion * velocidadBala;
+            (direccion + Vector2.up).normalized,     // diagonal hacia arriba
+            direccion.normalized,                    // recto
+            (direccion + Vector2.down).normalized     // diagonal hacia abajo
+        };
+
+        foreach (Vector2 dir in direcciones)
+        {
+            GameObject bala = Instantiate(Bala, ControladorDisparo.position, Quaternion.identity);
+            Rigidbody2D rb = bala.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.velocity = dir * velocidadBala;
+            }
         }
     }
 }
