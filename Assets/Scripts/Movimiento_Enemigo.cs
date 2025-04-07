@@ -24,8 +24,11 @@ public class Movimiento_Enemigo : MonoBehaviour
         Collider2D[] plataforma = Physics2D.OverlapBoxAll(SueloEnemigo.position, Caja, 0f,LayerMask.GetMask("Piso"));
         foreach (Collider2D col in plataforma)
         {
-            if (col.CompareTag("Suelo"))
-            {}else {
+            if (!col.CompareTag("Suelo"))
+            {
+               
+            } else 
+            {
                 Destroy(gameObject);
             }
         }
@@ -33,6 +36,7 @@ public class Movimiento_Enemigo : MonoBehaviour
     void FixedUpdate() 
     {
         rb.velocity = new Vector2 (velocidadEnemigo *-1, rb.velocity.y);   
+        DestruirEnemigo();
         
     }
 }

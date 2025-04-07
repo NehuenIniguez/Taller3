@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1692156895170542273}
   m_Layer: 0
   m_Name: Puente
-  m_TagString: Untagged
+  m_TagString: Puente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd3cce6d36cfea4eb18c87f5ec3ce0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoDeEspera: 0.5
+  jugador: {fileID: 0}

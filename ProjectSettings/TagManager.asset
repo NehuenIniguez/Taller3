@@ -11,6 +11,8 @@ TagManager:
   - PoweUp1
   - PowerUp1
   - PowerUp2
+  - "Ca\xF1on"
+  - Puente
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Water
   - UI
   - personaje
-  - 
-  - 
+  - Invisible
+  - Balas
   - 
   - 
   - 

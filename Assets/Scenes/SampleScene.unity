@@ -544,7 +544,7 @@ MonoBehaviour:
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 1
+  m_SoftZoneHeight: 1.06
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 432119856}
   m_Layer: 0
   m_Name: "Ca\xF1on2"
-  m_TagString: Untagged
+  m_TagString: "Ca\xF1on"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,11 +1127,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Radius
-      value: 34.138775
+      value: 23.077732
       objectReference: {fileID: 0}
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Offset.x
-      value: 2.3076668
+      value: -8.753376
       objectReference: {fileID: 0}
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Offset.y
@@ -1180,6 +1180,10 @@ PrefabInstance:
     - target: {fileID: 2751777102965253486, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526304030692643892, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9048135307188505960, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Name
@@ -1358,7 +1362,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 19.34
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1383,7 +1387,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.6, y: 0.17, z: -10}
+  m_LocalPosition: {x: -19, y: 4.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1649,6 +1653,10 @@ PrefabInstance:
     - target: {fileID: 1162635521261589128, guid: 2ffb108f8fdcaa446a34f94e2ca7e4a7, type: 3}
       propertyPath: m_Name
       value: Puente (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692156895170542273, guid: 2ffb108f8fdcaa446a34f94e2ca7e4a7, type: 3}
+      propertyPath: tiempoDeEspera
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3282298115078135874, guid: 2ffb108f8fdcaa446a34f94e2ca7e4a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3145,7 +3153,7 @@ Transform:
   m_GameObject: {fileID: 1133097920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116.8, y: 5.7, z: 0}
+  m_LocalPosition: {x: -19, y: 4.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3963,7 +3971,7 @@ GameObject:
   - component: {fileID: 1356766387}
   m_Layer: 0
   m_Name: "Ca\xF1on1"
-  m_TagString: Untagged
+  m_TagString: "Ca\xF1on"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4392,7 +4400,7 @@ GameObject:
   - component: {fileID: 1453101641}
   m_Layer: 0
   m_Name: Agua
-  m_TagString: Untagged
+  m_TagString: Agua
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5216,10 +5224,10 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1133097924}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 15
+    OrthographicSize: 19.34
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5245,7 +5253,7 @@ Transform:
   m_GameObject: {fileID: 1876192942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.6, y: 0.17, z: -10}
+  m_LocalPosition: {x: -19, y: 4.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6063,8 +6071,12 @@ PrefabInstance:
       value: 156.18547
       objectReference: {fileID: 0}
     - target: {fileID: 4631069213083102095, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631069213083102095, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.5183
+      value: 56.5
       objectReference: {fileID: 0}
     - target: {fileID: 4631069213083102095, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
       propertyPath: m_LocalPosition.y
