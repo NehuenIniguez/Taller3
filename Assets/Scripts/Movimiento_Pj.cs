@@ -6,11 +6,12 @@ using UnityEngine.Rendering;
 public class Movimiento_Pj : MonoBehaviour
 {
     [Header("Movimiento lateral y salto")]
-    public float speed = 100f;
-    public float jumpForce = 10f;
+    public float speed = 0.6f;
+    public float jumpForce = 30f;
     private bool miraDerecha = true;
     private bool salto = false;
     private Rigidbody2D  rb;
+    private Vector2 velocity;
     
     [Header("Agacharse")]
     [SerializeField] private BoxCollider2D cajaColision; 
@@ -21,6 +22,14 @@ public class Movimiento_Pj : MonoBehaviour
     [Header ("Detectar suelo para pasar de largo")]
     [SerializeField] private LayerMask suelo;
 
+    [Header("Mecanica del agua")]
+    [SerializeField] private Transform detectorEscaladaIzq;
+    [SerializeField] private Transform detectorEscaladaDer;
+    [SerializeField] private float distanciaLateral = 0.2f;
+    [SerializeField] private float alturaEscalada = 1.5f;
+    [SerializeField] public LayerMask plataformaEscalable;
+    private bool enAgua = false;
+
     
     void Start()
     {
@@ -29,36 +38,53 @@ public class Movimiento_Pj : MonoBehaviour
         offsetOriginal = cajaColision.offset;
     }
    void Update()
-{
-    float movimiento = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+    {
+        float movimiento = Input.GetAxisRaw("Horizontal");
+        velocity.x = movimiento * speed;
 
-    if (!agacharse)
-    {
-        rb.velocity = new Vector2(movimiento * speed, rb.velocity.y);
-        Pararse();
-    }
-    if ((movimiento > 0 && !miraDerecha) || (movimiento < 0 && miraDerecha))
-    {
-        Girar();
-    }
-    
-    if (Input.GetKeyDown("down") && !agacharse)
-    {
-        Agacharse();
-        salto = false;
+        if (!agacharse)
+        {
+            Pararse();
+        }
+        if ((movimiento > 0 && !miraDerecha) || (movimiento < 0 && miraDerecha))
+        {
+            Girar();
+        }
+
+        if (Input.GetKeyDown("down") && !agacharse)
+        {
+            Agacharse();
+            salto = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse)
+        {
+            salto = true;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (Input.GetKeyUp("down") && agacharse)
+        {
+            Pararse();
+        }
+        transform.position += (Vector3)(velocity * Time.deltaTime);
+        Debug.Log(velocity);
+
+
+        bool escalableLadoIzq = Physics2D.Raycast(detectorEscaladaIzq.position, Vector2.left, distanciaLateral, plataformaEscalable);
+        bool escalableLadoDer = Physics2D.Raycast(detectorEscaladaDer.position, Vector2.right, distanciaLateral, plataformaEscalable);
+
+        if (enAgua && (escalableLadoIzq || escalableLadoDer))
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.X))
+            {
+                // Trepa desde el lado
+                Vector3 direccionSubida = escalableLadoIzq ? new Vector3(1f, 1f, 0) : new Vector3(-1f, 1f, 0);
+                transform.position += direccionSubida.normalized * alturaEscalada;
+            }
+        }
     }
 
-    if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse)
-    {
-        salto = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-    }
-    
-    if (Input.GetKeyUp("down") && agacharse)
-    {
-        Pararse();
-    }
-}
     private void Girar()
     {
         miraDerecha = !miraDerecha;
@@ -66,10 +92,15 @@ public class Movimiento_Pj : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Agua"))
+        {
+            enAgua = true;
+        }   
         if (collision.gameObject.CompareTag("Suelo"))
-       {
+        {
             salto = false;
-       }
+        }
+       
     }
     public void Agacharse()
     {
