@@ -24,7 +24,6 @@ public class Movimiento_Pj : MonoBehaviour
 
     [Header("Mecanica del agua")]
     [SerializeField] private Transform detectorEscaladaIzq;
-    [SerializeField] private Transform detectorEscaladaDer;
     [SerializeField] private float distanciaLateral = 0.2f;
     [SerializeField] private float alturaEscalada = 1.5f;
     [SerializeField] public LayerMask plataformaEscalable;
@@ -72,14 +71,14 @@ public class Movimiento_Pj : MonoBehaviour
 
 
         bool escalableLadoIzq = Physics2D.Raycast(detectorEscaladaIzq.position, Vector2.left, distanciaLateral, plataformaEscalable);
-        bool escalableLadoDer = Physics2D.Raycast(detectorEscaladaDer.position, Vector2.right, distanciaLateral, plataformaEscalable);
+        
 
-        if (enAgua && (escalableLadoIzq || escalableLadoDer))
+        if (enAgua && (escalableLadoIzq))
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.X))
+            if (movimiento > 0 && !miraDerecha || movimiento< 0 && miraDerecha)
             {
                 // Trepa desde el lado
-                Vector3 direccionSubida = escalableLadoIzq ? new Vector3(1f, 1f, 0) : new Vector3(-1f, 1f, 0);
+                Vector3 direccionSubida = escalableLadoIzq ? new Vector3(-1f, 1f, 0) : new Vector3(1f, 1f, 0);
                 transform.position += direccionSubida.normalized * alturaEscalada;
             }
         }
@@ -96,7 +95,7 @@ public class Movimiento_Pj : MonoBehaviour
         {
             enAgua = true;
         }   
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puente"))
         {
             salto = false;
         }
@@ -114,6 +113,10 @@ public class Movimiento_Pj : MonoBehaviour
         cajaColision.size = tamañoOriginal;
         cajaColision.offset = offsetOriginal;
     }
-    
-    
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(detectorEscaladaIzq.position, detectorEscaladaIzq.position + Vector3.left * distanciaLateral);
+    }
+
 }

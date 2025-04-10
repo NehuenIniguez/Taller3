@@ -5,6 +5,7 @@ using UnityEngine;
 public class tiempoMuerte : MonoBehaviour
 {
     [SerializeField] private float tiempoVida;
+    public float daño;
 
     void Start()
     {
@@ -15,5 +16,13 @@ public class tiempoMuerte : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Personaje"))
+        {
+            collision.GetComponent<VidaPj>().Tomar_Daño(daño);
+            Destroy(gameObject);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movimiento_Bala : MonoBehaviour
 {
    
-    [SerializeField] private float daño;
+    [SerializeField] public float daño;
     [SerializeField] private float tiempoVida;
 
     void Start()
