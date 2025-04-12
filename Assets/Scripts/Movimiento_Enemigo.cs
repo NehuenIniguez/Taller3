@@ -24,7 +24,7 @@ public class Movimiento_Enemigo : MonoBehaviour
         Collider2D[] plataforma = Physics2D.OverlapBoxAll(SueloEnemigo.position, Caja, 0f,LayerMask.GetMask("Piso"));
         foreach (Collider2D col in plataforma)
         {
-            if (!col.CompareTag("Suelo"))
+            if (col.CompareTag("Suelo"))
             {
                
             } else 
