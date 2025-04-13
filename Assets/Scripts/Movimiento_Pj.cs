@@ -24,10 +24,13 @@ public class Movimiento_Pj : MonoBehaviour
 
     [Header("Mecanica del agua")]
     [SerializeField] private Transform detectorEscaladaIzq;
+    [SerializeField] private Transform detectorEscaladaDer;
     [SerializeField] private float distanciaLateral = 0.2f;
     [SerializeField] private float alturaEscalada = 1.5f;
-    [SerializeField] public LayerMask plataformaEscalable;
+    [SerializeField] private LayerMask plataformaEscalable;
     private bool enAgua = false;
+    private bool puedeEscalar = true; // Evita escalar muchas veces seguidas
+    [SerializeField] private float cooldownEscalada = 0.5f;
 
     
     void Start()
@@ -36,7 +39,7 @@ public class Movimiento_Pj : MonoBehaviour
         tamañoOriginal = cajaColision.size;
         offsetOriginal = cajaColision.offset;
     }
-   void Update()
+   void FixedUpdate()
     {
         float movimiento = Input.GetAxisRaw("Horizontal");
         velocity.x = movimiento * speed;
@@ -68,18 +71,20 @@ public class Movimiento_Pj : MonoBehaviour
         }
         transform.position += (Vector3)(velocity * Time.deltaTime);
         Debug.Log(velocity);
-
-
-        bool escalableLadoIzq = Physics2D.Raycast(detectorEscaladaIzq.position, Vector2.left, distanciaLateral, plataformaEscalable);
         
 
-        if (enAgua && (escalableLadoIzq))
+        if (enAgua && puedeEscalar)
         {
-            if (movimiento > 0 && !miraDerecha || movimiento< 0 && miraDerecha)
+            bool escalableLadoIzq = Physics2D.Raycast(detectorEscaladaIzq.position, Vector2.left, distanciaLateral, plataformaEscalable);
+            bool escalableLadoDer = Physics2D.Raycast(detectorEscaladaDer.position, Vector2.right, distanciaLateral, plataformaEscalable);
+
+            if ((escalableLadoIzq && movimiento < 0) || (escalableLadoDer && movimiento > 0))
             {
-                // Trepa desde el lado
-                Vector3 direccionSubida = escalableLadoIzq ? new Vector3(-1f, 1f, 0) : new Vector3(1f, 1f, 0);
-                transform.position += direccionSubida.normalized * alturaEscalada;
+                Vector3 direccion = escalableLadoIzq ? new Vector3(-1, 1, 0) : new Vector3(1, 1, 0);
+                transform.position += direccion.normalized * alturaEscalada;
+
+                puedeEscalar = false;
+                Invoke(nameof(HabilitarEscalada), cooldownEscalada);
             }
         }
     }
@@ -94,6 +99,8 @@ public class Movimiento_Pj : MonoBehaviour
         if (collision.gameObject.CompareTag("Agua"))
         {
             enAgua = true;
+            cajaColision.size = new Vector2(tamañoOriginal.x, tamañoOriginal.y / 2f); // Reducir altura
+            cajaColision.offset = new Vector2(offsetOriginal.x, offsetOriginal.y - (tamañoOriginal.y / 4f)); // Ajustar posición
         }   
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puente"))
         {
@@ -112,6 +119,10 @@ public class Movimiento_Pj : MonoBehaviour
         agacharse = false;
         cajaColision.size = tamañoOriginal;
         cajaColision.offset = offsetOriginal;
+    }
+    private void HabilitarEscalada()
+    {
+        puedeEscalar = true;
     }
     void OnDrawGizmos()
     {
