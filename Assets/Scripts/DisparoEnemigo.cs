@@ -23,6 +23,7 @@ public class DisparoEnemigo : MonoBehaviour
         {
             enRango = true;
             InvokeRepeating(nameof(Disparo), 0f, tiempoEntreDisparos);
+            Debug.Log("Entro el pj");
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -49,6 +50,6 @@ public class DisparoEnemigo : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-       Gizmos.DrawWireSphere(ControlDisparo.position, 10f);
+        Gizmos.DrawWireSphere(ControlDisparo.position, 10f);
     }
 }

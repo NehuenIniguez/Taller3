@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2137574316642389816}
   - component: {fileID: 4807188118153525785}
   - component: {fileID: 8928054680212659238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemigo2
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7992377577156044568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ControlDisparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

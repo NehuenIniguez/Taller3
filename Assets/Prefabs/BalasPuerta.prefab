@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7566570945380589293}
   - component: {fileID: 8853290759118707108}
   - component: {fileID: 4631900292601243482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BalasPuerta
   m_TagString: Untagged
   m_Icon: {fileID: 0}

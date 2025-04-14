@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd3cce6d36cfea4eb18c87f5ec3ce0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayDesaparicion: 0.35
+  delayDesaparicion: 0.5
   puenteAnterior: {fileID: 0}

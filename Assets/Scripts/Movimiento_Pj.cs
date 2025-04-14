@@ -6,12 +6,13 @@ using UnityEngine.Rendering;
 public class Movimiento_Pj : MonoBehaviour
 {
     [Header("Movimiento lateral y salto")]
-    public float speed = 0.6f;
-    public float jumpForce = 30f;
+    public float speed;
+    public float jumpForce;
     private bool miraDerecha = true;
     private bool salto = false;
     private Rigidbody2D  rb;
     private Vector2 velocity;
+    private bool enSuelo = false;
     
     [Header("Agacharse")]
     [SerializeField] private BoxCollider2D cajaColision; 
@@ -39,7 +40,7 @@ public class Movimiento_Pj : MonoBehaviour
         tamañoOriginal = cajaColision.size;
         offsetOriginal = cajaColision.offset;
     }
-   void FixedUpdate()
+   void Update()
     {
         float movimiento = Input.GetAxisRaw("Horizontal");
         velocity.x = movimiento * speed;
@@ -59,7 +60,7 @@ public class Movimiento_Pj : MonoBehaviour
             salto = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse)
+        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse && enSuelo)
         {
             salto = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -70,7 +71,7 @@ public class Movimiento_Pj : MonoBehaviour
             Pararse();
         }
         transform.position += (Vector3)(velocity * Time.deltaTime);
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         
 
         if (enAgua && puedeEscalar)
@@ -94,19 +95,32 @@ public class Movimiento_Pj : MonoBehaviour
         miraDerecha = !miraDerecha;
         transform.eulerAngles = new Vector3(0,miraDerecha ? 0:180, 0);
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("Agua"))
+        if (other.gameObject.CompareTag("Suelo") || other.gameObject.CompareTag("Puente"))
+        {
+            salto = false;
+            enSuelo = true;
+            enAgua = true;
+        }
+        if (other.gameObject.CompareTag("Agua"))
         {
             enAgua = true;
             cajaColision.size = new Vector2(tamañoOriginal.x, tamañoOriginal.y / 2f); // Reducir altura
             cajaColision.offset = new Vector2(offsetOriginal.x, offsetOriginal.y - (tamañoOriginal.y / 4f)); // Ajustar posición
-        }   
-        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puente"))
+        }    
+    }
+     void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Suelo") || other.gameObject.CompareTag("Puente"))
         {
-            salto = false;
+            enSuelo = false;
         }
-       
+        if (other.gameObject.CompareTag("Agua"))
+        {
+            enAgua = false;
+            cajaColision.size = tamañoOriginal; // Restaurar altura
+            cajaColision.offset = offsetOriginal; // Restaurar posición
+        }
     }
     public void Agacharse()
     {

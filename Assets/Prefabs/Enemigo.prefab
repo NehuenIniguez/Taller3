@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6062918912691048281}
   - component: {fileID: 8120365720217988822}
   - component: {fileID: 2104960436669947621}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -188,3 +188,5 @@ MonoBehaviour:
   velocidadEnemigo: 20
   Distancia: 20
   Derecha: 1
+  SueloEnemigo: {fileID: 0}
+  Caja: {x: 0, y: 0, z: 0}

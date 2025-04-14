@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4651358846622989020}
   - component: {fileID: 451924742732788132}
   - component: {fileID: 6083137540184535289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BalaPotenciada
-  m_TagString: Untagged
+  m_TagString: BalaPj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
