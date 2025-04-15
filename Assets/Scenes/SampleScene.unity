@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 432119852}
   - component: {fileID: 432119856}
   - component: {fileID: 432119857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Ca\xF1on2"
   m_TagString: "Ca\xF1on"
   m_Icon: {fileID: 0}
@@ -968,9 +968,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.2925944, y: -0.56842756}
+  m_Offset: {x: -1.7838707, y: -1.1428134}
   serializedVersion: 2
-  m_Radius: 4.3610225
+  m_Radius: 3.4266846
 --- !u!114 &432119857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,9 +980,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 432119851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56251f1833438b6498a01ff8ab4436a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4fbcf653c5c614d96021de3fe555b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VidaMaxima: 20
+  "colliderDeDa\xF1o": {fileID: 432119853}
+  colliderDetector: {fileID: 432119853}
 --- !u!4 &434657544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2044971078897064689, guid: 5943a1199d22eb4458913e61e7143edc, type: 3}
@@ -1424,7 +1427,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.8, y: 1.6000004, z: -2}
+  m_LocalPosition: {x: 431.09863, y: 2.16696, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2179,9 +2182,9 @@ GameObject:
   - component: {fileID: 716706170}
   - component: {fileID: 716706174}
   - component: {fileID: 716706173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EntradaPuerta
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2349,6 +2352,8 @@ MonoBehaviour:
   "Ca\xF1one": {fileID: 432119851}
   VidaMaxima: 32
   gO: {fileID: 0}
+  "colliderDeDa\xF1o": {fileID: 0}
+  colliderDetector: {fileID: 0}
 --- !u!1001 &792058384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5232,7 +5237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055665784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DisparoPuerta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5577,7 +5582,7 @@ Transform:
   m_GameObject: {fileID: 1133097920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.8, y: 10.6, z: 0}
+  m_LocalPosition: {x: 431.1, y: 10.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6324,15 +6329,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Radius
-      value: 24.21558
+      value: 15.186211
       objectReference: {fileID: 0}
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Offset.x
-      value: -11.9248085
+      value: -2.8724632
       objectReference: {fileID: 0}
     - target: {fileID: 2710087415189960340, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_Offset.y
-      value: -9.17239
+      value: -6.668064
       objectReference: {fileID: 0}
     - target: {fileID: 2751777102965253486, guid: f49bbbe8c0f3c7a459a5cfd3bf3037e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6546,7 +6551,7 @@ GameObject:
   - component: {fileID: 1356766383}
   - component: {fileID: 1356766387}
   - component: {fileID: 1356766388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "Ca\xF1on1"
   m_TagString: "Ca\xF1on"
   m_Icon: {fileID: 0}
@@ -6715,9 +6720,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.970839, y: -0.8794528}
+  m_Offset: {x: -1.6382625, y: -1.3466206}
   serializedVersion: 2
-  m_Radius: 4.350292
+  m_Radius: 3.4848804
 --- !u!114 &1356766388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6727,9 +6732,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1356766382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56251f1833438b6498a01ff8ab4436a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4fbcf653c5c614d96021de3fe555b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VidaMaxima: 20
+  "colliderDeDa\xF1o": {fileID: 1356766384}
+  colliderDetector: {fileID: 1356766384}
 --- !u!1001 &1374135577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6881,7 +6889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1384115964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DisparoPuertaDos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7918,7 +7926,7 @@ Transform:
   m_GameObject: {fileID: 1876192942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.8, y: 1.6000004, z: -2}
+  m_LocalPosition: {x: 431.1, y: 1.6000004, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -8,6 +8,20 @@ public class Accionar : MonoBehaviour
     [SerializeField] private GameObject Cañone;
     [SerializeField] private float VidaMaxima;
     [SerializeField] public GameObject gO;
+    public Collider2D colliderDeDaño; // BoxCollider2D
+    public Collider2D colliderDetector; // CircleCollider2D
+
+    void Awake()
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (Collider2D col in colliders)
+        {
+            if (col is BoxCollider2D)
+                colliderDeDaño = col;
+            else if (col is CircleCollider2D)
+                colliderDetector = col;
+        }
+    }
     void Start()
     {
         cañon = GameObject.Find("Cañon1");

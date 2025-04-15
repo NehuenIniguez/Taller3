@@ -50,7 +50,7 @@ public class Movimiento_Pj : MonoBehaviour
         velocity.x = movimiento * speed;
 
         if (!agacharse)
-        {
+        { 
             Pararse();
         }
         if ((movimiento > 0 && !miraDerecha) || (movimiento < 0 && miraDerecha))
@@ -58,8 +58,10 @@ public class Movimiento_Pj : MonoBehaviour
             Girar();
         }
 
-        if (Input.GetKeyDown("down") && !agacharse)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !agacharse)
         {
+            Debug.Log("Se ejecuta esto");
+            animator.SetBool("Agacharse",true);
             Agacharse();
             salto = false;
         }
@@ -70,8 +72,9 @@ public class Movimiento_Pj : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if (Input.GetKeyUp("down") && agacharse)
+        if (Input.GetKeyUp(KeyCode.DownArrow) && agacharse)
         {
+            animator.SetBool("Agacharse",false);
             Pararse();
         }
         transform.position += (Vector3)(velocity * Time.deltaTime);
@@ -132,7 +135,7 @@ public class Movimiento_Pj : MonoBehaviour
         agacharse = true;
         cajaColision.size = new Vector2(tamañoOriginal.x, tamañoOriginal.y / 2f); // Reducir altura
         cajaColision.offset = new Vector2(offsetOriginal.x, offsetOriginal.y - (tamañoOriginal.y / 4f)); // Ajustar posición
-        animator.SetBool("Agacharse",true);
+        
     }
     public void Pararse ()
     {

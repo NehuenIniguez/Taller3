@@ -44,5 +44,30 @@ public class Movimiento_Bala : MonoBehaviour
             Destroy(gameObject);
             
         }
+         else if (other.CompareTag("Cañon"))
+        {
+            VidaPuertas vida = other.GetComponent<VidaPuertas>();
+            if (vida != null && vida.colliderDeDaño == other)
+            {
+                vida.Tomar_Daño(daño);
+                Destroy(gameObject);
+            }
+            else if (vida == null)
+            {
+                vida = other.GetComponentInParent<VidaPuertas>();
+            }
+        }
+         else if (other.CompareTag("Puerta"))
+        {
+            Accionar puerta = other.GetComponent<Accionar>();
+            if (puerta == null)
+                puerta = other.GetComponentInParent<Accionar>();
+    
+            if (puerta != null && puerta.colliderDeDaño == other)
+            {
+                puerta.Tomar_Daño(daño);
+                Destroy(gameObject);
+            }
+        }
     }
 }
