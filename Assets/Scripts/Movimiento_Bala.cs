@@ -37,5 +37,12 @@ public class Movimiento_Bala : MonoBehaviour
                 enemigo = other.GetComponentInParent<Enemigo>();
             }
         }
+        if (other.CompareTag("Personaje"))
+        {
+            VidaPj vida = other.GetComponent<VidaPj>();
+            vida.Tomar_Daño(daño);
+            Destroy(gameObject);
+            
+        }
     }
 }

@@ -7,12 +7,13 @@ public class DisparoJugador : MonoBehaviour
     [SerializeField] private Transform ControladorDisparo;
     [SerializeField] private GameObject Bala;
     [SerializeField] private float velocidadBala;
-
+    public Animator animator;
     private Vector2 ultimaDireccion = Vector2.right;
 
     void Start()
     {
         GetComponent<DisparoPotencido>().enabled = true;
+        animator = GetComponent<Animator>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -41,8 +42,22 @@ public class DisparoJugador : MonoBehaviour
         // Si se presiona el botón de disparo y hay una dirección válida
         if (Input.GetKeyDown(KeyCode.Z) )
         {
+           
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
+            
 
+        }
+       
+    }
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Z) )
+        {
+            animator.SetBool("Dispara",true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            animator.SetBool("Dispara", false);
         }
     }
 

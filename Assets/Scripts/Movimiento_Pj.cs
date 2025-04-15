@@ -5,7 +5,9 @@ using UnityEngine.Rendering;
 
 public class Movimiento_Pj : MonoBehaviour
 {
+    public Animator animator;
     [Header("Movimiento lateral y salto")]
+
     public float speed;
     public float jumpForce;
     private bool miraDerecha = true;
@@ -39,6 +41,8 @@ public class Movimiento_Pj : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tamañoOriginal = cajaColision.size;
         offsetOriginal = cajaColision.offset;
+        animator = GetComponent<Animator>();
+        animator.SetBool("Agacharse",false);
     }
    void Update()
     {
@@ -124,12 +128,15 @@ public class Movimiento_Pj : MonoBehaviour
     }
     public void Agacharse()
     {
+        
         agacharse = true;
         cajaColision.size = new Vector2(tamañoOriginal.x, tamañoOriginal.y / 2f); // Reducir altura
         cajaColision.offset = new Vector2(offsetOriginal.x, offsetOriginal.y - (tamañoOriginal.y / 4f)); // Ajustar posición
+        animator.SetBool("Agacharse",true);
     }
     public void Pararse ()
     {
+        animator.SetBool("Agacharse",false);
         agacharse = false;
         cajaColision.size = tamañoOriginal;
         cajaColision.offset = offsetOriginal;

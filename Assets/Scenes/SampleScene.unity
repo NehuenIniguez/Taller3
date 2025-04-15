@@ -1424,7 +1424,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6000004, z: -2}
+  m_LocalPosition: {x: -27.8, y: 1.6000004, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5436,6 +5436,7 @@ GameObject:
   - component: {fileID: 1133097927}
   - component: {fileID: 1133097928}
   - component: {fileID: 1133097929}
+  - component: {fileID: 1133097930}
   m_Layer: 6
   m_Name: Personaje
   m_TagString: Personaje
@@ -5475,18 +5476,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02914381}
+  m_Offset: {x: 0.07029438, y: -0.09877968}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.3125, y: 5.328125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0582881}
+  m_Size: {x: 2.7613888, y: 4.4913826}
   m_EdgeRadius: 0
 --- !u!50 &1133097922
 Rigidbody2D:
@@ -5556,7 +5557,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1850838055, guid: 7907ce6d38fc7f9498db407039a2da73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5577,7 +5578,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.8, y: 10.6, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1912925350}
@@ -5598,6 +5599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7929cc110b64edb4aa490f6823420654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   speed: 10
   jumpForce: 12
   cajaColision: {fileID: 1133097921}
@@ -5627,6 +5629,7 @@ MonoBehaviour:
   ControladorDisparo: {fileID: 1912925350}
   Bala: {fileID: 4771389221890973841, guid: 25894e50ae6811d479e4e9fccf2cb294, type: 3}
   velocidadBala: 30
+  animator: {fileID: 0}
 --- !u!114 &1133097927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5672,6 +5675,27 @@ MonoBehaviour:
   Bala: {fileID: 4771389221890973841, guid: cb9db68b66ea15d488c7a2ee2985adfb, type: 3}
   velocidadBala: 30
   couldown: 0.5
+--- !u!95 &1133097930
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133097920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1111649307d3a804eb8b9bf2fa907cb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1188419753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7894,7 +7918,7 @@ Transform:
   m_GameObject: {fileID: 1876192942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6000004, z: -2}
+  m_LocalPosition: {x: -27.8, y: 1.6000004, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8754,7 +8778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3991891555780147451, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3991891555780147451, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
       propertyPath: m_SortingOrder
