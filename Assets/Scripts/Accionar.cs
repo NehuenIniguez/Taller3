@@ -7,9 +7,10 @@ public class Accionar : MonoBehaviour
     [SerializeField] private GameObject cañon;
     [SerializeField] private GameObject Cañone;
     [SerializeField] private float VidaMaxima;
-    [SerializeField] public GameObject gO;
+    
     public Collider2D colliderDeDaño; // BoxCollider2D
     public Collider2D colliderDetector; // CircleCollider2D
+    private bool vulnerable = false;
 
     void Awake()
     {
@@ -26,17 +27,18 @@ public class Accionar : MonoBehaviour
     {
         cañon = GameObject.Find("Cañon1");
         Cañone = GameObject.Find("Cañon2");
-        gO = GetComponent<Movimiento_Bala>().gameObject;
+        
     }
     void Update()
     {
-        if (cañon == null && Cañone == null)
+        if (!vulnerable && cañon == null && Cañone == null)
         {
-           Tomar_Daño(gO.GetComponent<Movimiento_Bala>().daño);
+           vulnerable=true;
         }
     }
     public void Tomar_Daño (float daño)
     {
+        if(!vulnerable) return;
         VidaMaxima -= daño;
         if (VidaMaxima <= 0)
         {

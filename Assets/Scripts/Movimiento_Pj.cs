@@ -108,10 +108,11 @@ public class Movimiento_Pj : MonoBehaviour
         {
             salto = false;
             enSuelo = true;
-            enAgua = true;
+            enAgua = false;
         }
         if (other.gameObject.CompareTag("Agua"))
         {
+            Debug.Log("en agua");
             enAgua = true;
             cajaColision.size = new Vector2(tamañoOriginal.x, tamañoOriginal.y / 2f); // Reducir altura
             cajaColision.offset = new Vector2(offsetOriginal.x, offsetOriginal.y - (tamañoOriginal.y / 4f)); // Ajustar posición
@@ -124,6 +125,7 @@ public class Movimiento_Pj : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Agua"))
         {
+            Debug.Log("salio del agua");
             enAgua = false;
             cajaColision.size = tamañoOriginal; // Restaurar altura
             cajaColision.offset = offsetOriginal; // Restaurar posición

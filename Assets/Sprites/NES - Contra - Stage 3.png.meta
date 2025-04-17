@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7907ce6d38fc7f9498db407039a2da73
+guid: 5d080468cc7d3ae4c9579b5bc1166073
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,190 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._0
+      name: NES - Contra - Stage 3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 683
-        width: 340
-        height: 341
+        x: 1
+        y: 32
+        width: 51.75
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 112aad543db600a48b872abb11b65400
-      internalID: 1850838055
+      spriteID: 543f865324bf6f94e87eddf709da1b4d
+      internalID: -748323771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._1
+      name: NES - Contra - Stage 3_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 682.6666
-        width: 341.33334
-        height: 341.33334
+        x: 52
+        y: 32
+        width: 51.75
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58987d4308988204aa67db284cfa1613
-      internalID: -2034242817
+      spriteID: 2c6e81ad67b42be4b90f2cbca462c788
+      internalID: -1391607503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._2
+      name: NES - Contra - Stage 3_2
       rect:
         serializedVersion: 2
-        x: 682
-        y: 682.6666
-        width: 341.33334
-        height: 341.33334
+        x: 103
+        y: 32
+        width: 51.75
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9388ba8b62692a743b115d26e48f32a5
-      internalID: -1388036598
+      spriteID: cd9d7106d3b424147b28aa7057b89af1
+      internalID: 945508503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._3
+      name: NES - Contra - Stage 3_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 345
-        width: 341
-        height: 335
-      alignment: 9
-      pivot: {x: 0.46830672, y: 0.4085944}
-      border: {x: 0, y: 5, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01cb4e881e844cc43bb6a5f5ae9811f1
-      internalID: -1547289316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._4
-      rect:
-        serializedVersion: 2
-        x: 347
-        y: 340
-        width: 328
-        height: 341
-      alignment: 9
-      pivot: {x: 0.3974909, y: 0.62149113}
+        x: 154
+        y: 32
+        width: 51.75
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05102f46123f41943815ba2d3d71697a
-      internalID: 1569548469
+      spriteID: 6f087384840377e4ba66b2a58849c8f2
+      internalID: -899471847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._5
+      name: NES - Contra - Stage 3_4
       rect:
         serializedVersion: 2
-        x: 671
-        y: 342
-        width: 331
-        height: 341
-      alignment: 9
-      pivot: {x: 0.39060858, y: 0.593438}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dc25a7ab321dc34480e84d8be4d23e3
-      internalID: -231362449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._6
-      rect:
-        serializedVersion: 2
-        x: 4
+        x: 13
         y: 16
-        width: 341
-        height: 330
+        width: 35
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34ed45f94c0bd7c41b9d653f0ff2b07e
-      internalID: 72471694
+      spriteID: 0e54e106e6bc73c488bb61a52a2d5450
+      internalID: -1541714556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._7
+      name: NES - Contra - Stage 3_5
       rect:
         serializedVersion: 2
-        x: 341
-        y: 0.6666565
-        width: 341.33334
-        height: 341.33334
+        x: 51
+        y: 16
+        width: 24
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f4b8f68d1153c489d37b75a11b7fe7
-      internalID: 1259035901
+      spriteID: 815753f5a885df14ab4e209a01452ee3
+      internalID: 1967583968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT Image 15 abr 2025, 10_11_58 a.m._8
+      name: NES - Contra - Stage 3_6
       rect:
         serializedVersion: 2
-        x: 682
-        y: 0.6666565
-        width: 341.33334
-        height: 341.33334
+        x: 103
+        y: 0
+        width: 51.75
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0c99826bcc486e4792acd7b44317ffe
-      internalID: 2045523149
+      spriteID: 3b657678c0f20b9419048c76959064ae
+      internalID: -481533393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Stage 3_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 51.75
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e2dee57c99ed148947d48f5a026f11
+      internalID: -1881265994
       vertices: []
       indices: 
       edges: []
@@ -309,15 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._0: 1850838055
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._1: -2034242817
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._2: -1388036598
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._3: -1547289316
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._4: 1569548469
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._5: -231362449
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._6: 72471694
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._7: 1259035901
-      ChatGPT Image 15 abr 2025, 10_11_58 a.m._8: 2045523149
+      NES - Contra - Stage 3_0: -748323771
+      NES - Contra - Stage 3_1: -1391607503
+      NES - Contra - Stage 3_2: 945508503
+      NES - Contra - Stage 3_3: -899471847
+      NES - Contra - Stage 3_4: -1541714556
+      NES - Contra - Stage 3_5: 1967583968
+      NES - Contra - Stage 3_6: -481533393
+      NES - Contra - Stage 3_7: -1881265994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
