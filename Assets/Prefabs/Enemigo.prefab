@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 15.1, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2833108445785414704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &4597792676949689457
@@ -173,6 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 10
+  "colliderDeDa\xF1o": {fileID: 0}
+  colliderDetector: {fileID: 0}
 --- !u!114 &2104960436669947621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,5 +191,36 @@ MonoBehaviour:
   velocidadEnemigo: 20
   Distancia: 20
   Derecha: 1
-  SueloEnemigo: {fileID: 0}
-  Caja: {x: 0, y: 0, z: 0}
+  SueloEnemigo: {fileID: 2833108445785414704}
+  Caja: {x: 1, y: 0.15, z: 0}
+--- !u!1 &8615181126299120309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2833108445785414704}
+  m_Layer: 10
+  m_Name: DetectorSuelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2833108445785414704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615181126299120309}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.596, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2044971078897064689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

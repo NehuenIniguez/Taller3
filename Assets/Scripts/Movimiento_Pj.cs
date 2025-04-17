@@ -48,6 +48,14 @@ public class Movimiento_Pj : MonoBehaviour
     {
         float movimiento = Input.GetAxisRaw("Horizontal");
         velocity.x = movimiento * speed;
+        if (movimiento != 0)
+        {
+            animator.SetFloat("Caminar",1f);
+        }
+        else
+        {
+            animator.SetFloat("Caminar",0f);
+        }
 
         if (!agacharse)
         { 
