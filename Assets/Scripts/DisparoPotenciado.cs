@@ -12,9 +12,12 @@ public class DisparoPotenciado : MonoBehaviour
 
 
     private Vector2 ultimaDireccion = Vector2.right;
+    private Animator animator;
+
     void Start()
     {
         GetComponent<DisparoPotenciado>().enabled = false;
+        animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -50,6 +53,17 @@ public class DisparoPotenciado : MonoBehaviour
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
             lastShot = Time.time;
+        }
+    }
+     void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Z) )
+        {
+            animator.SetBool("Dispara",true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            animator.SetBool("Dispara", false);
         }
     }
 

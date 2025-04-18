@@ -19,6 +19,11 @@ public class Movimiento_Enemigo : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawCube(SueloEnemigo.position,Caja);
     }
+    void FixedUpdate() 
+    {
+        rb.velocity = new Vector2 (velocidadEnemigo *-1, rb.velocity.y);   
+        DestruirEnemigo(); 
+    }
     public void DestruirEnemigo()
     {
         Collider2D[] plataforma = Physics2D.OverlapBoxAll(SueloEnemigo.position, Caja, 0f,LayerMask.GetMask("Piso"));
@@ -33,10 +38,5 @@ public class Movimiento_Enemigo : MonoBehaviour
             }
         }
     }
-    void FixedUpdate() 
-    {
-        rb.velocity = new Vector2 (velocidadEnemigo *-1, rb.velocity.y);   
-        DestruirEnemigo();
-        
-    }
+    
 }

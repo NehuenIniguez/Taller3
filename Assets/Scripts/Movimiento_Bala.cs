@@ -7,12 +7,12 @@ public class Movimiento_Bala : MonoBehaviour
    
     [SerializeField] public float daño;
     [SerializeField] private float tiempoVida;
-    private Collider2D balaCol;
+    public Collider2D balaCol;
 
 
     void Start()
     {
-        Collider2D balaCol = GetComponent<Collider2D>();
+      balaCol = GetComponent<Collider2D>();
       
         Destroy(gameObject,tiempoVida);
     }

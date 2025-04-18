@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ControlDisparo: {fileID: 3840502689697429298}
   bala: {fileID: 8627888623099820980, guid: 2823de7f1f022e74aa8c6f42d5ea6595, type: 3}
-  Velocidadbala: 30
+  Velocidadbala: 10
   jugador: {fileID: 0}
   tiempoEntreDisparos: 1.5
 --- !u!50 &5526304030692643892

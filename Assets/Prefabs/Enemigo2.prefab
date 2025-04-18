@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 0
+  "colliderDeDa\xF1o": {fileID: 0}
+  colliderDetector: {fileID: 0}
 --- !u!114 &4807188118153525785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ControlDisparo: {fileID: 7992377577156044568}
   bala: {fileID: 8627888623099820980, guid: 2823de7f1f022e74aa8c6f42d5ea6595, type: 3}
-  Velocidadbala: 20
+  Velocidadbala: 10
   jugador: {fileID: 0}
   tiempoEntreDisparos: 1
 --- !u!58 &8928054680212659238

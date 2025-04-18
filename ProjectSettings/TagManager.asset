@@ -15,6 +15,7 @@ TagManager:
   - Puente
   - BalaPj
   - Puerta
+  - Capa
   layers:
   - Default
   - TransparentFX

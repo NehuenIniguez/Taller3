@@ -9,11 +9,13 @@ public class DisparoPotencido : MonoBehaviour
     [SerializeField] private float velocidadBala;
     [SerializeField] private float couldown;
     private float lastShot = 0f;
+    private Animator animator;
 
     private Vector2 ultimaDireccion = Vector2.right;
     void Start()
     {
         GetComponent<DisparoPotencido>().enabled = false;
+        animator = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -49,6 +51,17 @@ public class DisparoPotencido : MonoBehaviour
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
             lastShot = Time.time;
+        }
+    }
+     void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Z) )
+        {
+            animator.SetBool("Dispara",true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            animator.SetBool("Dispara", false);
         }
     }
 
