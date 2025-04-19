@@ -69,5 +69,17 @@ public class Movimiento_Bala : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (other.CompareTag("Jefe"))
+        {
+            JefePuerta jefe = other.GetComponent<JefePuerta>();
+            if (jefe == null)
+                jefe = other.GetComponentInParent<JefePuerta>();
+
+            if (jefe != null && jefe.colliderDeDaño == other)
+            {
+                jefe.Tomar_Daño(daño);
+                Destroy(gameObject);
+            }
+        }
     }
 }

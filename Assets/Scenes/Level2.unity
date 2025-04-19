@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7051188}
   - component: {fileID: 7051187}
   - component: {fileID: 7051189}
+  - component: {fileID: 7051190}
   m_Layer: 0
   m_Name: brazo (3)
   m_TagString: Untagged
@@ -266,6 +267,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7051190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 602699244}
+  velocidad: 1
+  radio: 0
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1 &28643536
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,9 +299,9 @@ GameObject:
   - component: {fileID: 28643541}
   - component: {fileID: 28643540}
   - component: {fileID: 28643539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CentroEnemigo
-  m_TagString: Untagged
+  m_TagString: Jefe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +402,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09721565, y: 0.81010437}
@@ -2065,6 +2084,7 @@ GameObject:
   - component: {fileID: 473428599}
   - component: {fileID: 473428598}
   - component: {fileID: 473428600}
+  - component: {fileID: 473428601}
   m_Layer: 0
   m_Name: "Ca\xF1onizq (3)"
   m_TagString: Untagged
@@ -2197,6 +2217,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &473428601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473428596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 767244055}
+  velocidad: 100
+  radio: 2
+  semicircular: 0
+  duracionMovimiento: 5
+  duracionEspera: 1
 --- !u!1001 &481944399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2331,6 +2369,7 @@ GameObject:
   - component: {fileID: 530016249}
   - component: {fileID: 530016251}
   - component: {fileID: 530016252}
+  - component: {fileID: 530016253}
   m_Layer: 0
   m_Name: "Ca\xF1onizq"
   m_TagString: Untagged
@@ -2463,6 +2502,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &530016253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530016248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 767244055}
+  velocidad: 100
+  radio: 9
+  semicircular: 0
+  duracionMovimiento: 5
+  duracionEspera: 1
 --- !u!1001 &554508942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2591,6 +2648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602699244}
   - component: {fileID: 602699243}
+  - component: {fileID: 602699246}
   - component: {fileID: 602699245}
   m_Layer: 0
   m_Name: BrazoDerecho
@@ -2666,6 +2724,24 @@ CircleCollider2D:
   m_Offset: {x: 3.0778055, y: 0}
   serializedVersion: 2
   m_Radius: 7.1306543
+--- !u!114 &602699246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602699242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 1570319927}
+  velocidad: 1
+  radio: 0.05
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1001 &622238984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2971,6 +3047,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &767244054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767244055}
+  m_Layer: 0
+  m_Name: Centro de giro izq
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767244055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767244054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.4, y: 393.7, z: -0.47094107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777502891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3445,7 @@ GameObject:
   - component: {fileID: 903853863}
   - component: {fileID: 903853862}
   - component: {fileID: 903853864}
+  - component: {fileID: 903853865}
   m_Layer: 0
   m_Name: brazo (1)
   m_TagString: Untagged
@@ -3470,6 +3578,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &903853865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903853860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 602699244}
+  velocidad: 1
+  radio: 4
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1001 &947645108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5932,6 +6058,7 @@ GameObject:
   - component: {fileID: 1562382404}
   - component: {fileID: 1562382403}
   - component: {fileID: 1562382405}
+  - component: {fileID: 1562382406}
   m_Layer: 0
   m_Name: "Ca\xF1onizq (1)"
   m_TagString: Untagged
@@ -6064,6 +6191,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1562382406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562382401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 767244055}
+  velocidad: 100
+  radio: 6
+  semicircular: 0
+  duracionMovimiento: 5
+  duracionEspera: 1
+--- !u!1 &1570319926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1570319927}
+  m_Layer: 0
+  m_Name: Centro de giro
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1570319927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570319926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.9, y: 393.7, z: -0.47094107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1581150702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6560,6 +6736,7 @@ GameObject:
   - component: {fileID: 1755316332}
   - component: {fileID: 1755316331}
   - component: {fileID: 1755316333}
+  - component: {fileID: 1755316334}
   m_Layer: 0
   m_Name: brazo (2)
   m_TagString: Untagged
@@ -6692,6 +6869,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1755316334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755316329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 602699244}
+  velocidad: 1
+  radio: 2
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1001 &1760992995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6822,6 +7017,7 @@ GameObject:
   - component: {fileID: 1765813364}
   - component: {fileID: 1765813363}
   - component: {fileID: 1765813365}
+  - component: {fileID: 1765813366}
   m_Layer: 0
   m_Name: "Ca\xF1onizq (2)"
   m_TagString: Untagged
@@ -6954,6 +7150,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1765813366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765813361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 767244055}
+  velocidad: 100
+  radio: 4
+  semicircular: 0
+  duracionMovimiento: 5
+  duracionEspera: 1
 --- !u!1001 &1788487183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7302,6 +7516,7 @@ GameObject:
   - component: {fileID: 1969014611}
   - component: {fileID: 1969014610}
   - component: {fileID: 1969014612}
+  - component: {fileID: 1969014613}
   m_Layer: 0
   m_Name: brazo
   m_TagString: Untagged
@@ -7434,6 +7649,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1969014613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969014608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 602699244}
+  velocidad: 1
+  radio: 6
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1001 &1970821291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8185,6 +8418,7 @@ GameObject:
   - component: {fileID: 2128702585}
   - component: {fileID: 2128702587}
   - component: {fileID: 2128702588}
+  - component: {fileID: 2128702589}
   m_Layer: 0
   m_Name: "Ca\xF1onDer"
   m_TagString: Untagged
@@ -8317,6 +8551,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2128702589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128702584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9c16e5774bfeb40a0d5f06f828efa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {fileID: 602699244}
+  velocidad: 1
+  radio: 9
+  semicircular: 0
+  duracionMovimiento: 3
+  duracionEspera: 1
 --- !u!1001 &2130122528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8513,3 +8765,5 @@ SceneRoots:
   - {fileID: 602699244}
   - {fileID: 1287593327}
   - {fileID: 1451345412}
+  - {fileID: 1570319927}
+  - {fileID: 767244055}

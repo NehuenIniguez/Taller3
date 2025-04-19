@@ -46,13 +46,14 @@ public class JefePuerta : MonoBehaviour
         if (other.CompareTag("BalaPj"))
         {
             Movimiento_Bala scriptBala = other.GetComponent<Movimiento_Bala>();
+            
 
-        if (scriptBala != null && scriptBala.balaCol == colliderDeDaño)
-        {
-            float daño = scriptBala.daño;
-            Tomar_Daño(daño);
-            Destroy(other.gameObject);
-        }
+            if (scriptBala != null)
+            {
+                float daño = scriptBala.daño;
+                Tomar_Daño(daño);
+                Destroy(other.gameObject);
+            }
         }
     }
 }
