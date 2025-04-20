@@ -494,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 20
   "colliderDeDa\xF1o": {fileID: 28643541}
+  colliderDeteccion: {fileID: 28643539}
 --- !u!1001 &79200622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2986,6 +2987,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &671256147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671256149}
+  - component: {fileID: 671256148}
+  m_Layer: 0
+  m_Name: GeneradorPiedra (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671256148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671256147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77738e9c5e37df040a32db4221d1ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPiedra: {fileID: 7196971971008969794, guid: da3cc0c7aab6e1943a626530beadb448, type: 3}
+  puntosDeSpawn: {fileID: 671256149}
+  tiempoEntrePiedras: 4
+--- !u!4 &671256149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671256147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -51, y: 73.7, z: -0.7461693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &699799474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5065,6 +5113,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &1285710855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285710857}
+  - component: {fileID: 1285710856}
+  m_Layer: 0
+  m_Name: GeneradorPiedra (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1285710856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285710855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77738e9c5e37df040a32db4221d1ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPiedra: {fileID: 7196971971008969794, guid: da3cc0c7aab6e1943a626530beadb448, type: 3}
+  puntosDeSpawn: {fileID: 1285710857}
+  tiempoEntrePiedras: 4
+--- !u!4 &1285710857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285710855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -38.56, y: 48.76, z: -0.7461693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1286190819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5639,6 +5734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 6885629757574567529, guid: eb13c1bd6467f6d45b7c7f5bddb80a45, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8348417124602282763, guid: eb13c1bd6467f6d45b7c7f5bddb80a45, type: 3}
       propertyPath: velocidadBala
       value: 30
@@ -6046,6 +6145,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &1511141959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1511141961}
+  - component: {fileID: 1511141960}
+  m_Layer: 0
+  m_Name: GeneradorPiedra (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1511141960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511141959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77738e9c5e37df040a32db4221d1ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPiedra: {fileID: 7196971971008969794, guid: da3cc0c7aab6e1943a626530beadb448, type: 3}
+  puntosDeSpawn: {fileID: 1511141961}
+  tiempoEntrePiedras: 4
+--- !u!4 &1511141961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511141959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -44.51, y: 55.52, z: -0.7461693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562382401
 GameObject:
   m_ObjectHideFlags: 0
@@ -6602,6 +6748,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &1717460800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717460802}
+  - component: {fileID: 1717460801}
+  m_Layer: 0
+  m_Name: GeneradorPiedra
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1717460801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717460800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77738e9c5e37df040a32db4221d1ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPiedra: {fileID: 7196971971008969794, guid: da3cc0c7aab6e1943a626530beadb448, type: 3}
+  puntosDeSpawn: {fileID: 1717460802}
+  tiempoEntrePiedras: 4
+--- !u!4 &1717460802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717460800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -70.06, y: 36.2, z: -0.7461693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1739159983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7412,6 +7605,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e8381a2ffba564c84e72fce9c3f5bf, type: 3}
+--- !u!1 &1922518726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922518728}
+  - component: {fileID: 1922518727}
+  m_Layer: 0
+  m_Name: GeneradorPiedra (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1922518727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922518726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77738e9c5e37df040a32db4221d1ab20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPiedra: {fileID: 7196971971008969794, guid: da3cc0c7aab6e1943a626530beadb448, type: 3}
+  puntosDeSpawn: {fileID: 1922518728}
+  tiempoEntrePiedras: 4
+--- !u!4 &1922518728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922518726}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -63.6, y: 61.4, z: -0.7461693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1924536413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8767,3 +9007,8 @@ SceneRoots:
   - {fileID: 1451345412}
   - {fileID: 1570319927}
   - {fileID: 767244055}
+  - {fileID: 1717460802}
+  - {fileID: 1511141961}
+  - {fileID: 1285710857}
+  - {fileID: 1922518728}
+  - {fileID: 671256149}

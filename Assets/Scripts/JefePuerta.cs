@@ -9,6 +9,7 @@ public class JefePuerta : MonoBehaviour
     private bool vulnerable = false;
 
     public Collider2D colliderDeDaño;
+    public Collider2D colliderDeteccion;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class JefePuerta : MonoBehaviour
         foreach (Collider2D col in colliders)
         {
             if (col is BoxCollider2D) colliderDeDaño = col;
+            if (col is CircleCollider2D) colliderDeteccion = col;
         }
     }
 
@@ -25,6 +27,7 @@ public class JefePuerta : MonoBehaviour
         if (brazosDestruidos >= 2)
         {
             vulnerable = true;
+            colliderDeteccion.enabled = false;
             Debug.Log("¡Puerta vulnerable!");
         }
     }
@@ -32,6 +35,7 @@ public class JefePuerta : MonoBehaviour
     public void Tomar_Daño(float daño)
     {
         if (!vulnerable) return;
+         
 
         vida -= daño;
         if (vida <= 0)
