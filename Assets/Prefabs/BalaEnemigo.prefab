@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "da\xF1o": 1
-  tiempoVida: 3
+  tiempoVida: 2
+  balaCol: {fileID: 0}
 --- !u!50 &-1483437331216985284
 Rigidbody2D:
   serializedVersion: 4

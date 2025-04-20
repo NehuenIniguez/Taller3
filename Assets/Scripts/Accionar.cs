@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Accionar : MonoBehaviour
 {
@@ -48,5 +49,6 @@ public class Accionar : MonoBehaviour
     private void Muerte()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene("PasoLevel2");
     }
 }

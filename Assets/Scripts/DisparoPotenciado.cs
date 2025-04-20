@@ -9,8 +9,6 @@ public class DisparoPotenciado : MonoBehaviour
     [SerializeField] private float velocidadBala;
     [SerializeField] private float couldown;
     private float lastShot = 0f;
-
-
     private Vector2 ultimaDireccion = Vector2.right;
     private Animator animator;
 

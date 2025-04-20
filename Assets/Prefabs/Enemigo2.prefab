@@ -174,9 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac4cbaee242fb54aac7e32beffb0b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
+  vida: 2
   "colliderDeDa\xF1o": {fileID: 0}
-  colliderDetector: {fileID: 0}
+  colliderDetector: {fileID: 2442549626493306021}
 --- !u!114 &4807188118153525785
 MonoBehaviour:
   m_ObjectHideFlags: 0
