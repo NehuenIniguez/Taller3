@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VidaPj : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class VidaPj : MonoBehaviour
    }
    private void Muerte()
    {
-        Destroy(gameObject);
+      Destroy(gameObject);
+      SceneManager.LoadScene("GameOver");;
+
    }
 }
