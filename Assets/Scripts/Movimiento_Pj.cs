@@ -47,6 +47,8 @@ public class Movimiento_Pj : MonoBehaviour
    void Update()
     {
         float movimiento = Input.GetAxisRaw("Horizontal");
+        float move = Input.GetAxisRaw("Vertical");
+
         velocity.x = movimiento * speed;
         if (movimiento != 0)
         {
@@ -66,7 +68,7 @@ public class Movimiento_Pj : MonoBehaviour
             Girar();
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && !agacharse)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !agacharse || move < 0 && !agacharse)
         {
             Debug.Log("Se ejecuta esto");
             animator.SetBool("Agacharse",true);
@@ -74,13 +76,13 @@ public class Movimiento_Pj : MonoBehaviour
             salto = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse && enSuelo)
+        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse && enSuelo || Input.GetButtonDown("Jump") && !salto && !agacharse && enSuelo)
         {
             salto = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        if (Input.GetKeyUp(KeyCode.DownArrow) && agacharse)
+        if (Input.GetKeyUp(KeyCode.DownArrow) && agacharse || Input.GetButtonUp("Jump") && agacharse)
         {
             animator.SetBool("Agacharse",false);
             Pararse();

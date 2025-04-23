@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 5d080468cc7d3ae4c9579b5bc1166073
+guid: 8f1f9a8a405352748b917495cc797ae7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1619534408041976614
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_0
+  - first:
+      213: -8176813229314412709
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_1
+  - first:
+      213: -3858295678362306087
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_2
+  - first:
+      213: -1035095719648262555
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_3
+  - first:
+      213: 4555241175629397954
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_4
+  - first:
+      213: -7865232696376887894
+    second: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 14
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +85,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,20 +98,20 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,192 +128,157 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NES - Contra - Stage 3_0
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 32
-        width: 51.75
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 543f865324bf6f94e87eddf709da1b4d
-      internalID: -748323771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_1
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 32
-        width: 51.75
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c6e81ad67b42be4b90f2cbca462c788
-      internalID: -1391607503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_2
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 32
-        width: 51.75
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd9d7106d3b424147b28aa7057b89af1
-      internalID: 945508503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_3
-      rect:
-        serializedVersion: 2
-        x: 154
-        y: 32
-        width: 51.75
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f087384840377e4ba66b2a58849c8f2
-      internalID: -899471847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_4
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 16
-        width: 35
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e54e106e6bc73c488bb61a52a2d5450
-      internalID: -1541714556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_5
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 16
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 815753f5a885df14ab4e209a01452ee3
-      internalID: 1967583968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NES - Contra - Stage 3_6
-      rect:
-        serializedVersion: 2
-        x: 103
+        x: 0
         y: 0
-        width: 51.75
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5350694, y: 0.49353978}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3b657678c0f20b9419048c76959064ae
-      internalID: -481533393
+      spriteID: 6235dd4a6fdb97610800000000000000
+      internalID: 1619534408041976614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NES - Contra - Stage 3_7
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_1
       rect:
         serializedVersion: 2
-        x: 154
+        x: 16
         y: 0
-        width: 51.75
+        width: 18
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.555783, y: 0.47231358}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43e2dee57c99ed148947d48f5a026f11
-      internalID: -1881265994
+      spriteID: b5feff7c0bf168e80800000000000000
+      internalID: -8176813229314412709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.48687425, y: 0.476928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d93accc584947ac0800000000000000
+      internalID: -3858295678362306087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.49835905, y: 0.46769917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56686d95de992a1f0800000000000000
+      internalID: -1035095719648262555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5492198, y: 0.45016444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf7f9be6b7773f30800000000000000
+      internalID: 4555241175629397954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 17
+        height: 32
+      alignment: 9
+      pivot: {x: 0.56427586, y: 0.42893824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5faa0d88419d290800000000000000
+      internalID: -7865232696376887894
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a12348aa85fc31f48b7ac77ceba2316f
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      NES - Contra - Stage 3_0: -748323771
-      NES - Contra - Stage 3_1: -1391607503
-      NES - Contra - Stage 3_2: 945508503
-      NES - Contra - Stage 3_3: -899471847
-      NES - Contra - Stage 3_4: -1541714556
-      NES - Contra - Stage 3_5: 1967583968
-      NES - Contra - Stage 3_6: -481533393
-      NES - Contra - Stage 3_7: -1881265994
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_0: 1619534408041976614
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_1: -8176813229314412709
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_2: -3858295678362306087
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_3: -1035095719648262555
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_4: 4555241175629397954
+      NES_-_Contra_-_Enemies___Obstacles-removebg-preview (1)_5: -7865232696376887894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

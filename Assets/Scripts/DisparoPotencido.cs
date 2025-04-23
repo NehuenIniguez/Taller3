@@ -32,14 +32,16 @@ public class DisparoPotencido : MonoBehaviour
     }
     void Update()
     {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
         Vector2 direccion = Vector2.zero;
 
-        // Detectar dirección de disparo
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) direccion += Vector2.up;
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) direccion += Vector2.left;
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) direccion += Vector2.right;
-        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))  direccion = Vector2.right + Vector2.down;
-        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)|| Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) direccion = Vector2.left + Vector2.down;
+       // Detectar dirección de disparo
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || vertical > 0) direccion += Vector2.up;
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) || horizontal < 0) direccion += Vector2.left;
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || horizontal > 0) direccion += Vector2.right;
+        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D) || vertical < 0 && horizontal > 0)  direccion = Vector2.right + Vector2.down;
+        if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)|| Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A) || vertical < 0 && horizontal < 0) direccion = Vector2.left + Vector2.down;
         
         if (direccion != Vector2.zero && direccion != Vector2.up && direccion != Vector2.down)
         {
@@ -47,7 +49,7 @@ public class DisparoPotencido : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown)
+        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown || Input.GetButton("Fire3") && Time.time >= lastShot + couldown)
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
             lastShot = Time.time;
@@ -55,11 +57,11 @@ public class DisparoPotencido : MonoBehaviour
     }
      void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Z) )
+        if (Input.GetKey(KeyCode.Z) ||Input.GetButton("Fire3") )
         {
             animator.SetBool("Dispara",true);
         }
-        else if (Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.Z)|| Input.GetButtonUp("Fire3"))
         {
             animator.SetBool("Dispara", false);
         }
@@ -72,7 +74,7 @@ public class DisparoPotencido : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = direccion * velocidadBala;
+            rb.linearVelocity = direccion * velocidadBala;
         }
     }
 }

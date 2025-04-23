@@ -6,6 +6,8 @@ public class ControlPlataforma : MonoBehaviour
 {
     private PlatformEffector2D pE2D;
     private bool puedePasar = false;
+    
+
     void Start()
     {
         pE2D = GetComponent<PlatformEffector2D>();
@@ -20,7 +22,7 @@ public class ControlPlataforma : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey("down") && Input.GetKeyDown(KeyCode.X) && puedePasar )
+        if (Input.GetKey("down") && Input.GetKeyDown(KeyCode.X) && puedePasar || Input.GetKey("down") && Input.GetButton("Fire1") && puedePasar)
         {
             pE2D.rotationalOffset = 180f;
             puedePasar = false;

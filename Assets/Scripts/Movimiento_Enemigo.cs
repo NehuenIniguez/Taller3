@@ -21,7 +21,7 @@ public class Movimiento_Enemigo : MonoBehaviour
     }
     void FixedUpdate() 
     {
-        rb.velocity = new Vector2 (velocidadEnemigo *-1, rb.velocity.y);   
+        rb.linearVelocity = new Vector2 (velocidadEnemigo *-1, rb.linearVelocity.y);   
         DestruirEnemigo(); 
     }
     public void DestruirEnemigo()

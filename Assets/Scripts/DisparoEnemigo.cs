@@ -44,7 +44,7 @@ public class DisparoEnemigo : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = direccion * Velocidadbala;
+            rb.linearVelocity = direccion * Velocidadbala;
         }
     }
     void OnDrawGizmos()
