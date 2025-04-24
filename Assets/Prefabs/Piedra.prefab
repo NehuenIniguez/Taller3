@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7996930402579305964}
   - component: {fileID: 4959194838535996782}
   - component: {fileID: 8813391138541478811}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Piedra
-  m_TagString: Untagged
+  m_TagString: Piedra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

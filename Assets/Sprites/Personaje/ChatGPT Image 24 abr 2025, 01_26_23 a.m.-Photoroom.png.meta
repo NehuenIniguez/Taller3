@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 912a4a5d18ea6b045966605f5ef9bc53
+guid: 24f3aa8c61883fb4f8184611e9a446a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7577756445241197693
-    second: 250129_0
+      213: -8631220081476303677
+    second: ChatGPT Image 24 abr 2025, 01_26_23 a.m.-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 220
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +87,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 16384
     resizeAlgorithm: 0
-    textureFormat: 10
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 250129_0
+      name: ChatGPT Image 24 abr 2025, 01_26_23 a.m.-Photoroom_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 2176
+        x: 163
+        y: 153
+        width: 692
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38bb8f669a666d690800000000000000
-      internalID: -7577756445241197693
+      spriteID: 3c40369e01fb73880800000000000000
+      internalID: -8631220081476303677
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      250129_0: -7577756445241197693
+      ChatGPT Image 24 abr 2025, 01_26_23 a.m.-Photoroom_0: -8631220081476303677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

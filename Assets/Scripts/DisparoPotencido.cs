@@ -49,7 +49,7 @@ public class DisparoPotencido : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown || Input.GetButton("Fire3") && Time.time >= lastShot + couldown)
+        if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown || Input.GetKey("joystick button 2") && Time.time >= lastShot + couldown)
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
             lastShot = Time.time;
@@ -57,11 +57,11 @@ public class DisparoPotencido : MonoBehaviour
     }
      void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Z) ||Input.GetButton("Fire3") )
+        if (Input.GetKey(KeyCode.Z) ||Input.GetKey("joystick button 2") )
         {
             animator.SetBool("Dispara",true);
         }
-        if (Input.GetKeyUp(KeyCode.Z)|| Input.GetButtonUp("Fire3"))
+        if (Input.GetKeyUp(KeyCode.Z)|| Input.GetKeyUp("joystick button 2"))
         {
             animator.SetBool("Dispara", false);
         }

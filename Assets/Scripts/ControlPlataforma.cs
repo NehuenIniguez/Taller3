@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,8 @@ public class ControlPlataforma : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey("down") && Input.GetKeyDown(KeyCode.X) && puedePasar || Input.GetKey("down") && Input.GetButton("Fire1") && puedePasar)
+        float ye = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey("down") && Input.GetKeyDown(KeyCode.X) && puedePasar || ye < 0 && Input.GetButton("Fire2") && puedePasar)
         {
             pE2D.rotationalOffset = 180f;
             puedePasar = false;

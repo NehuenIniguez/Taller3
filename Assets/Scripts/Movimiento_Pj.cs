@@ -46,10 +46,13 @@ public class Movimiento_Pj : MonoBehaviour
     }
    void Update()
     {
+        //input de movimiento
         float movimiento = Input.GetAxisRaw("Horizontal");
         float move = Input.GetAxisRaw("Vertical");
 
         velocity.x = movimiento * speed;
+
+        //seteo de animaciones de caminar
         if (movimiento != 0)
         {
             animator.SetFloat("Caminar",1f);
@@ -59,6 +62,7 @@ public class Movimiento_Pj : MonoBehaviour
             animator.SetFloat("Caminar",0f);
         }
 
+        //funcion para apararse
         if (!agacharse)
         { 
             Pararse();
@@ -76,19 +80,27 @@ public class Movimiento_Pj : MonoBehaviour
             salto = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse && enSuelo || Input.GetButtonDown("Jump") && !salto && !agacharse && enSuelo)
+        if (Input.GetKeyDown(KeyCode.X) && !salto && !agacharse && enSuelo || Input.GetButton("Fire2") && !salto && !agacharse && enSuelo)
         {
             salto = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        if (Input.GetKeyUp(KeyCode.DownArrow) && agacharse || Input.GetButtonUp("Jump") && agacharse)
+        if (Input.GetKeyUp(KeyCode.DownArrow) && agacharse || move >= 0 && agacharse)
         {
             animator.SetBool("Agacharse",false);
             Pararse();
         }
         transform.position += (Vector3)(velocity * Time.deltaTime);
-        //Debug.Log(velocity);
+        
+        if (rb.linearVelocity.y != 0f)
+        {
+            animator.SetFloat("Salto", 1f);
+        }
+        else 
+        {
+            animator.SetFloat("Salto", 0f);
+        }
         
 
         if (enAgua && puedeEscalar)

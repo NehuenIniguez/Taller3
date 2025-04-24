@@ -1,42 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Movimiento_Enemigo : MonoBehaviour
 {
-    [SerializeField] private float velocidadEnemigo;
-    [SerializeField] private float Distancia;
-    [SerializeField] private bool Derecha;
-    [SerializeField] private Transform SueloEnemigo;  
-    [SerializeField]private Vector3 Caja;  
+     [SerializeField] private float velocidadEnemigo = 2f;
+    [SerializeField] private Transform sueloEnemigo;  
+    [SerializeField] private Vector3 caja = new Vector3(0.5f, 0.1f, 0f);  
+    [SerializeField] private LayerMask capaSuelo;
+
     private Rigidbody2D rb;
+    private bool mirandoDerecha = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(SueloEnemigo.position,Caja);
+        Gizmos.DrawCube(sueloEnemigo.position, caja);
     }
-    void FixedUpdate() 
+
+    void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2 (velocidadEnemigo *-1, rb.linearVelocity.y);   
-        DestruirEnemigo(); 
-    }
-    public void DestruirEnemigo()
-    {
-        Collider2D[] plataforma = Physics2D.OverlapBoxAll(SueloEnemigo.position, Caja, 0f,LayerMask.GetMask("Piso"));
-        foreach (Collider2D col in plataforma)
+        // Mover en la dirección actual
+        float direccion = mirandoDerecha ? 1 : -1;
+        rb.linearVelocity = new Vector2(direccion * velocidadEnemigo, rb.linearVelocity.y);
+
+        // Detectar si hay suelo delante
+        Collider2D sueloDetectado = Physics2D.OverlapBox(sueloEnemigo.position, caja, 0f, capaSuelo);
+        if (sueloDetectado == null)
         {
-            if (col.CompareTag("Suelo"))
-            {
-               
-            } else 
-            {
-                Destroy(gameObject);
-            }
+            // No hay suelo → girar
+            Girar();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bloqueo"))
+        {
+            Debug.Log("Hola");
+        }
+    }
+    void Girar()
+    {
+        mirandoDerecha = !mirandoDerecha;
+
+        // Invertir la escala en X para voltear el sprite
+        Vector3 escala = transform.localScale;
+        escala.x *= -1;
+        transform.localScale = escala;
     }
     
 }

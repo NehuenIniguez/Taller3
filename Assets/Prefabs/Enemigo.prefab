@@ -119,7 +119,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &6062918912691048281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,17 +154,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0042333603, y: -0.01900518}
+  m_Offset: {x: -0.0046510696, y: 0.029922247}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5350694, y: 0.49353978}
-    oldSize: {x: 1.3333334, y: 2.6666667}
+    oldSize: {x: 1.1428572, y: 2.2857144}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3640709, y: 2.7070425}
+  m_Size: {x: 1.2396908, y: 2.3870807}
   m_EdgeRadius: 0
 --- !u!114 &8120365720217988822
 MonoBehaviour:
@@ -193,11 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c42fe803aaed6341b3b0018e27654c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadEnemigo: 20
-  Distancia: 20
-  Derecha: 1
-  SueloEnemigo: {fileID: 2833108445785414704}
-  Caja: {x: 1, y: 0.15, z: 0}
+  velocidadEnemigo: 10
+  sueloEnemigo: {fileID: 2833108445785414704}
+  caja: {x: 2, y: 0.3, z: 0}
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &2339218567495777967
 Animator:
   serializedVersion: 7
@@ -245,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 8615181126299120309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.43, z: 0}
+  m_LocalPosition: {x: 2.61, y: -1.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

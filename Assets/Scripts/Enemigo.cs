@@ -18,6 +18,7 @@ public class Enemigo : MonoBehaviour
             else if (col is CircleCollider2D)
                 colliderDetector = col;
         }
+        
     }
 
     public void Tomardaño(float daño)
@@ -33,5 +34,15 @@ public class Enemigo : MonoBehaviour
     {
         Debug.Log("nt");
         Destroy(gameObject);
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        VidaPj vidaPj = other.gameObject.GetComponent<VidaPj>();
+        if (other.gameObject.CompareTag("Personaje"))
+        {
+            
+            vidaPj.Tomar_Daño(1f); // Cambia el valor de daño según sea necesario
+            
+        }
     }
 }
