@@ -11,6 +11,7 @@ public class VidaPj : MonoBehaviour
 
     [SerializeField] private Image[] medallasUI; // ← arrastrá las dos medallas desde el Canvas
     [SerializeField] private GameObject gameOverUI; // ← arrastrá aquí el objeto con el sprite de "Game Over"
+     [SerializeField] private float tiempoEspera = 1f;
 
     void Start()
     {
@@ -44,6 +45,14 @@ public class VidaPj : MonoBehaviour
         Time.timeScale = 0f;
 
         if (gameOverUI != null)
+        {
             gameOverUI.SetActive(true);
+            StartCoroutine(CambioEscena());
+        }
+    }
+    IEnumerator CambioEscena()
+    {
+        yield return new WaitForSecondsRealtime(tiempoEspera);
+        SceneManager.LoadScene("GameOver");
     }
 }
