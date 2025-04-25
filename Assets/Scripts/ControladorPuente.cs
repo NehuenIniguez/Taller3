@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ControladorPuente : MonoBehaviour
@@ -7,7 +8,8 @@ public class ControladorPuente : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float delayDesaparicion = 0.5f;
-    [HideInInspector] public GameObject puenteAnterior;
+    [SerializeField] public GameObject puenteAnterior;
+    [SerializeField] private GameObject explosion;
 
     private bool yaDesaparecio = false;
 
@@ -43,7 +45,14 @@ public class ControladorPuente : MonoBehaviour
         boxCollider2D.enabled = false;
         spriteRenderer.enabled = false;
         gameObject.SetActive(false); // Si querés que desaparezca completamente
+        Explotar();
     }
-
+    public void Explotar()
+    {
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+    }
 }
 

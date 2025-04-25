@@ -135,6 +135,7 @@ MonoBehaviour:
   balaCol: {fileID: 9009612087681802964}
   balasBoom: {fileID: 1276743828967747334, guid: 11cb8fecbdd89914d89be4607c473cb0, type: 3}
   velocidadDisparo: 20
+  explotion: {fileID: 0}
 --- !u!58 &9009612087681802964
 CircleCollider2D:
   m_ObjectHideFlags: 0

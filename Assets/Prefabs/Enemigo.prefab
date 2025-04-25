@@ -181,6 +181,7 @@ MonoBehaviour:
   vida: 1
   "colliderDeDa\xF1o": {fileID: 0}
   colliderDetector: {fileID: 0}
+  explosion: {fileID: 1543276720109414381, guid: a2f864ad673a07743be1e2052c97b411, type: 3}
 --- !u!114 &2104960436669947621
 MonoBehaviour:
   m_ObjectHideFlags: 0

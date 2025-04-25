@@ -6,6 +6,7 @@ public class BrazoManager : MonoBehaviour
 {
     private int bloquesRestantes;
     private int detectorMuerte;
+    [SerializeField] private GameObject explosion;
 
     private void Start()
     {
@@ -21,7 +22,18 @@ public class BrazoManager : MonoBehaviour
         {
             Debug.Log("Brazo destruido");
             FindObjectOfType<JefePuerta>().BrazoDestruido();
+            Explotar();
             Destroy(gameObject); // Opcional: destruir el GameObject del brazo
+        }
+    }
+    public void Explotar()
+    {
+         // Instanciar la explosión
+        if (explosion != null)
+        {
+            Debug.Log("boom");
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            
         }
     }
 }

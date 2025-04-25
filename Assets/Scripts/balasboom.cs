@@ -49,7 +49,7 @@ public class balasBoom : MonoBehaviour
             
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
     public void Explotar()
     {

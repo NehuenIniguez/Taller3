@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ControlDisparo: {fileID: 2761080401141423593}
-  bala: {fileID: 1276743828967747334, guid: ab09e3f26f7110e4092dcc3cccb4fefb, type: 3}
+  bala: {fileID: 1543276720109414381, guid: a2f864ad673a07743be1e2052c97b411, type: 3}
   Velocidadbala: 10
   tiempoEntreDisparos: 1
 --- !u!114 &780109989807791241
@@ -122,6 +122,7 @@ MonoBehaviour:
   vida: 1
   "colliderDeDa\xF1o": {fileID: -6037461664886660490}
   colliderDetector: {fileID: 0}
+  explosion: {fileID: 1543276720109414381, guid: 214973f73c42c084ab31620a81e9058d, type: 3}
 --- !u!61 &-6037461664886660490
 BoxCollider2D:
   m_ObjectHideFlags: 0

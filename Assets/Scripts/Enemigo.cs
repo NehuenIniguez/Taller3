@@ -7,6 +7,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float vida;
     public Collider2D colliderDeDaño; // BoxCollider2D
     public Collider2D colliderDetector; // CircleCollider2D
+    [SerializeField] private GameObject explosion;
 
     void Awake()
     {
@@ -33,7 +34,8 @@ public class Enemigo : MonoBehaviour
     private void Muerte ()
     {
         Debug.Log("nt");
-        Destroy(gameObject);
+       Explotar();
+       Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -44,5 +46,16 @@ public class Enemigo : MonoBehaviour
             vidaPj.Tomar_Daño(1f); // Cambia el valor de daño según sea necesario
             
         }
+    }
+    public void Explotar()
+    {
+         // Instanciar la explosión
+        if (explosion != null)
+        {
+            Debug.Log("boom");
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            
+        }
+        //Destroy(gameObject);
     }
 }

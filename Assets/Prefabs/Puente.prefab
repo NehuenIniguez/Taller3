@@ -186,3 +186,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayDesaparicion: 0.5
   puenteAnterior: {fileID: 0}
+  explosion: {fileID: 1543276720109414381, guid: a2f864ad673a07743be1e2052c97b411, type: 3}

@@ -45,7 +45,7 @@ public class MotorBala : MonoBehaviour
 
         
 
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
      private void Explotar()
     {
