@@ -4,40 +4,49 @@ using UnityEngine;
 
 public class RebotePiedra : MonoBehaviour
 {
-    private bool yaReboto = false;
-    private PlatformEffector2D effector;
-    private Rigidbody2D rb;  
-    [SerializeField] private float tiempoDeVida = 10f;
+ private Rigidbody2D rb;
+    private Collider2D colliderPiedra;
 
+    [SerializeField] private float tiempoDeVida = 10f;
+    private bool yaReboto = false;
 
     void Start()
     {
-        effector = GetComponent<PlatformEffector2D>();
         rb = GetComponent<Rigidbody2D>();
-        
+        colliderPiedra = GetComponent<Collider2D>();
+
         Destroy(gameObject, tiempoDeVida);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (!yaReboto && collision.collider.CompareTag("Suelo"))
+        if (!yaReboto && other.collider.CompareTag("Suelo"))
         {
             yaReboto = true;
-            Invoke("DesactivarEffector", 0.1f); // Pequeña demora para evitar bugs
+
+            // Después del primer rebote: le sacamos el bounciness
+            //colliderPiedra.sharedMaterial = null;
+
+            // (opcional) Podés cambiar también el gravityScale para que caiga más rápido
+            //rb.gravityScale = 2f;
+            colliderPiedra.isTrigger = true;
         }
-    }
-
-    void DesactivarEffector()
-    {
-        effector.rotationalOffset = 0f;
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Suelo"))
+        if (other.collider.CompareTag("Personaje"))
         {
-            yaReboto = false;
-            effector.rotationalOffset =180f;
+            other.collider.GetComponent<VidaPj>().Tomar_Daño(1f);
         }
     }
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+    
+        if (yaReboto && other.CompareTag("Suelo"))
+        {
+            Debug.Log("Hola");
+            yaReboto = false;
+            // Desactivamos el collider para que no rebote más
+            colliderPiedra.isTrigger = false;
+          //colliderPiedra.sharedMaterial 
+        }
+    }
+
 }

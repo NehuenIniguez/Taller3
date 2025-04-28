@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemigo : MonoBehaviour
@@ -8,6 +9,8 @@ public class Enemigo : MonoBehaviour
     public Collider2D colliderDeDaño; // BoxCollider2D
     public Collider2D colliderDetector; // CircleCollider2D
     [SerializeField] private GameObject explosion;
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip dañoClip;
 
     void Awake()
     {
@@ -22,9 +25,14 @@ public class Enemigo : MonoBehaviour
         
     }
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    } 
     public void Tomardaño(float daño)
     {
         vida -= daño;
+        audioSource.PlayOneShot(dañoClip);
         if (vida<= 0)
         {
             Debug.Log("le dieron");

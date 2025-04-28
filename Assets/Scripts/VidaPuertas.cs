@@ -8,6 +8,10 @@ public class VidaPuertas : MonoBehaviour
    
     public Collider2D colliderDeDaño; // BoxCollider2D
     public Collider2D colliderDetector; // CircleCollider2D
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip DañoPuerta;
+    [SerializeField] private GameObject explosion;
+    
 
     void Awake()
     {
@@ -20,9 +24,14 @@ public class VidaPuertas : MonoBehaviour
                 colliderDetector = col;
         }
     }
-   public void Tomar_Daño (float daño)
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void Tomar_Daño (float daño)
    {
       VidaMaxima -= daño;
+      audioSource.PlayOneShot(DañoPuerta);
       if (VidaMaxima <= 0)
       {
             Muerte();
@@ -30,6 +39,22 @@ public class VidaPuertas : MonoBehaviour
    }
    private void Muerte()
    {
+       
         Destroy(gameObject);
+        
+        Explotar();
    }
+    public void Explotar()
+    {
+        // Instanciar la explosión
+        if (explosion != null)
+        {
+            
+            Debug.Log("boom");
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            
+        }
+        //Destroy(gameObject);
+    }
 }
+

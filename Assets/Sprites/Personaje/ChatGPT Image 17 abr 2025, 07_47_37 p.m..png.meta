@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -246,11 +246,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 2
         width: 341
         height: 268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.45567757, y: 0.69851017}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: ChatGPT Image 17 abr 2025, 07_47_37 p.m._7
       rect:
         serializedVersion: 2
-        x: 341
+        x: 339
         y: 1
         width: 341
         height: 268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49113515, y: 0.7458828}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: ChatGPT Image 17 abr 2025, 07_47_37 p.m._8
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1
+        x: 678
+        y: 0
         width: 341
         height: 268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.54077613, y: 0.7481382}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

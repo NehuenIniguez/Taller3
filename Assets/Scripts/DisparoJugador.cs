@@ -9,11 +9,14 @@ public class DisparoJugador : MonoBehaviour
     [SerializeField] private float velocidadBala;
     public Animator animator;
     private Vector2 ultimaDireccion = Vector2.right;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip disparoClip;
 
     void Start()
     {
         GetComponent<DisparoPotencido>().enabled = true;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -42,26 +45,18 @@ public class DisparoJugador : MonoBehaviour
         }
 
         // Si se presiona el botón de disparo y hay una dirección válida
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown("joystick button 2") )
-        {
-           
-            Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
-            
-
-        }
-       
-    }
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown("joystick button 2"))
-        {
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown("joystick button 2") ){
+            audioSource.PlayOneShot(disparoClip);
             animator.SetBool("Dispara",true);
+            Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
         }
         if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp("joystick button 2"))
         {
             animator.SetBool("Dispara", false);
         }
+       
     }
+    
 
     private void Disparar(Vector2 direccion)
     {

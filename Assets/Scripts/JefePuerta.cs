@@ -7,7 +7,7 @@ public class JefePuerta : MonoBehaviour
     [SerializeField] private float vida = 20f;
     private int brazosDestruidos = 0;
     private bool vulnerable = false;
-
+    [SerializeField] private GameObject explosion;
     public Collider2D colliderDeDaño;
     public Collider2D colliderDeteccion;
 
@@ -41,6 +41,7 @@ public class JefePuerta : MonoBehaviour
         if (vida <= 0)
         {
             Debug.Log("Puerta destruida");
+            Explotar();
             Destroy(gameObject);
         }
     }
@@ -59,5 +60,16 @@ public class JefePuerta : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+    }
+     public void Explotar()
+    {
+         // Instanciar la explosión
+        if (explosion != null)
+        {
+            Debug.Log("boom");
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            
+        }
+        //Destroy(gameObject);
     }
 }

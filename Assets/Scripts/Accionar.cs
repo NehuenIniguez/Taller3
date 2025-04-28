@@ -12,6 +12,10 @@ public class Accionar : MonoBehaviour
     public Collider2D colliderDeDaño; // BoxCollider2D
     public Collider2D colliderDetector; // CircleCollider2D
     private bool vulnerable = false;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip Explosion;
+    [SerializeField] private GameObject ExplosionPrefab;
+    [SerializeField] private float tiempoEspera;
 
     void Awake()
     {
@@ -28,7 +32,7 @@ public class Accionar : MonoBehaviour
     {
         cañon = GameObject.Find("Cañon1");
         Cañone = GameObject.Find("Cañon2");
-        
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -46,9 +50,29 @@ public class Accionar : MonoBehaviour
             Muerte();
         }
     }
-    private void Muerte()
+        private void Muerte()
     {
-        Destroy(gameObject);
-        SceneManager.LoadScene("PasoLevel2");
+        StartCoroutine(Esperar());
     }
+
+    IEnumerator Esperar()
+    {
+        Explotar(); // Primero explotás
+        audioSource.PlayOneShot(Explosion);
+        yield return new WaitForSecondsRealtime(tiempoEspera); // Esperás
+        SceneManager.LoadScene("PasoLevel2"); // Cambiás de escena
+        Destroy(gameObject); // (opcional) podés destruirlo después, o ni hace falta si ya cambiás de escena
+    }
+    private void Explotar()
+    {
+          // Instanciar la explosión
+        if (ExplosionPrefab != null)
+        {
+            Debug.Log("boom");
+            
+            Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+            
+        }
+    }
+    
 }

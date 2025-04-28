@@ -10,12 +10,17 @@ public class DisparoPotencido : MonoBehaviour
     [SerializeField] private float couldown;
     private float lastShot = 0f;
     private Animator animator;
-
     private Vector2 ultimaDireccion = Vector2.right;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip disparoClip;
+    private VidaPj vidaPj;
+    private bool activo = false;
     void Start()
     {
         GetComponent<DisparoPotencido>().enabled = false;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        vidaPj = GetComponent<VidaPj>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,10 +28,12 @@ public class DisparoPotencido : MonoBehaviour
         if (other.CompareTag("PowerUp1"))
         {
             GetComponent<DisparoPotencido>().enabled = true;
+            activo = true;
             Destroy(other.gameObject);
         }
         if (other.CompareTag("PowerUp2"))
         {
+            activo = false;
             GetComponent<DisparoPotencido>().enabled = false;
         }
     }
@@ -47,18 +54,17 @@ public class DisparoPotencido : MonoBehaviour
         {
             ultimaDireccion = direccion.normalized;
         }
-
+          if (activo && vidaPj.vidasActuales < vidaPj.vidasMaximas)
+        {
+            GetComponent<DisparoPotencido>().enabled = false;
+            activo = false;
+        } 
         // Si se presiona el botón de disparo y hay una dirección válida
         if (Input.GetKey(KeyCode.Z) && Time.time >= lastShot + couldown || Input.GetKey("joystick button 2") && Time.time >= lastShot + couldown)
         {
             Disparar(direccion != Vector2.zero ? direccion.normalized : ultimaDireccion);
+            audioSource.PlayOneShot(disparoClip);
             lastShot = Time.time;
-        }
-    }
-     void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Z) ||Input.GetKey("joystick button 2") )
-        {
             animator.SetBool("Dispara",true);
         }
         if (Input.GetKeyUp(KeyCode.Z)|| Input.GetKeyUp("joystick button 2"))
@@ -66,6 +72,7 @@ public class DisparoPotencido : MonoBehaviour
             animator.SetBool("Dispara", false);
         }
     }
+  
 
     private void Disparar(Vector2 direccion)
     {
